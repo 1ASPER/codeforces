@@ -15,35 +15,38 @@ const int MOD = 1e9 + 7;
 const int INF = INT_MAX;
 
 void solve() {
-    ll l, r;
-    cin >> l >> r;
+    int n, k;
+    cin >> n >> k;
+
+    map<int, int> freq;
+    for (int i = 0; i < n; ++i) {
+        int x;
+        cin >> x;
+        freq[x]++;
+    }
+
+    vector<int> counts;
+    for (auto& [val, count] : freq) {
+        counts.push_back(count);
+    }
     
-    ll cnt = 0, ptr = 30;
-    
-    for (; ptr >= 0; ptr--) {
-        if ((l & (1 << ptr)) == (r & (1 << ptr))) {
-            if (l & (1 << ptr)) { 
-                cnt += (1 << ptr);
-                }
+    sort(all(counts)); 
+
+    int ans = sz(counts);
+    for (int count: counts) {
+        if (k >= count) {
+            k -= count;
+            ans--;
             continue;
         } 
+        
         break;
+        
     }
     
-    ll a, b, c;
-    if (r > cnt + (1 << ptr)) {
-        a = cnt + (1 << ptr) - 1;
-        b = cnt + (1 << ptr);
-        c = cnt + (1 << ptr) + 1;
-    } 
-    else {
-        a = cnt + (1 << ptr) - 2;
-        b = cnt + (1 << ptr) - 1;
-        c = cnt + (1 << ptr);
-    }
-    
-    cout << a << " " << b << " " << c << "\n";
+    cout << max(1, ans) << "\n";
 }
+
 
 int32_t main() {
     ios::sync_with_stdio(0);
@@ -58,3 +61,4 @@ int32_t main() {
 
     return 0;
 }
+
