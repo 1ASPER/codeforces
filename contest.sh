@@ -59,5 +59,5 @@ done
 # Log
 echo "$problem_number problems created for contest $contest_id"
 
-# Open the directory in Visual Studio Code (optional)
-# code .
+# Open the directory in Visual Studio Code
+code .
