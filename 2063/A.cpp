@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #define all(obj) obj.begin(), obj.end()
 #define sz(obj) (int)obj.size()
+#define range(v, x) upper_bound(all(v), x) - lower_bound(all(v), x)
 
 using ll = long long;
 using ld = long double;
@@ -14,7 +15,21 @@ using namespace std;
 const int MOD = 1e9 + 7;
 const int INF = INT_MAX;
 
+// bool is_prime(int n) {
+//     for (int i = 2; i * i <= n; i++) {
+//         if (n % i == 0) {
+//             return false;
+//         }
+//     }
+
+//     return true;
+// }
+
 void solve() {
+    int l, r;
+    cin >> l >> r;
+
+    cout << ((l == 1 && r == 1)? 1: r - l) << "\n";
     
 }
 

@@ -13,6 +13,7 @@ problem_number=$2
 template_code='#include <bits/stdc++.h>
 #define all(obj) obj.begin(), obj.end()
 #define sz(obj) (int)obj.size()
+#define range(v, x) upper_bound(all(v), x) - lower_bound(all(v), x)
 
 using ll = long long;
 using ld = long double;

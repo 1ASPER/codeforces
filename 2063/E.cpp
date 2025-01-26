@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #define all(obj) obj.begin(), obj.end()
 #define sz(obj) (int)obj.size()
+#define range(v, x) upper_bound(all(v), x) - lower_bound(all(v), x)
 
 using ll = long long;
 using ld = long double;
@@ -15,7 +16,7 @@ const int MOD = 1e9 + 7;
 const int INF = INT_MAX;
 
 void solve() {
-    
+
 }
 
 int32_t main() {
